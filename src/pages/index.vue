@@ -1,26 +1,26 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="12">
-        <h1>目前事項 {{ currentText }}</h1>
-        <h2>剩餘時間 {{ currentTime }}</h2>
+  <v-container >
+    <v-row style="text-align: center;">
+      <v-col cols="12" >
+        <h1 style="color: #EDD7C3;">目前事項 {{ currentText }}</h1>
+        <h2 style="color:#91A5AE;">剩餘時間 {{ currentTime }}</h2>
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" >
         <v-btn
           icon="mdi-play"
           @click="startTimer"
           :disabled="status === STATUS.COUNTING || (currentItem.length === 0 && items.length === 0)"
-        ></v-btn>
+          style="background-color:#91A5AE;"></v-btn>
         <v-btn
           icon="mdi-pause"
           :disabled="status !== STATUS.COUNTING"
           @click="pauseTimer"
-        ></v-btn>
+          style="background-color:#91A5AE;"></v-btn>
         <v-btn
           icon="mdi-skip-next"
           :disabled="currentItem.length === 0"
           @click="finishTimer"
-        ></v-btn>
+          style="background-color:#91A5AE;"></v-btn>
       </v-col>
     </v-row>
   </v-container>

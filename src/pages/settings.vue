@@ -4,24 +4,24 @@
       <v-col cols="12">
         <h1 class="text-center">鈴聲設定</h1>
       </v-col>
-      <v-col cols="12">
-        <v-table>
+      <v-col cols="12" >
+        <v-table style="background-color:#91A5AE;">
           <thead>
             <tr>
-              <th>名稱</th>
-              <th>試聽</th>
-              <th>選擇</th>
+              <th  style="color: #00324D;font-size: 15px;font-weight:bold;">名稱</th>
+              <th  style="color: #00324D;font-size: 15px;font-weight:bold;">試聽</th>
+              <th  style="color: #00324D;font-size: 15px;font-weight:bold;">選擇</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="alarm in alarms" :key="alarm.id">
+            <tr v-for="alarm in alarms" :key="alarm.id" >
               <td>{{ alarm.name }}</td>
               <td>
-                <audio :src="alarm.file" controls></audio>
+                <audio :src="alarm.file" controls ></audio>
               </td>
               <td>
                 <v-radio-group v-model="selectedAlarm">
-                  <v-radio :value="alarm.id"></v-radio>
+                  <v-radio :value="alarm.id" ></v-radio>
                 </v-radio-group>
               </td>
             </tr>

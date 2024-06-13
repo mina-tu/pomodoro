@@ -16,15 +16,15 @@
           :rules="[rules.required, rules.length]"
           ref="newItemTextField"
         ></v-text-field>
-        <v-table>
+        <v-table >
           <thead>
-            <tr>
-              <th>名稱</th>
-              <th>操作</th>
+            <tr style="background-color: #DDCEC0;">
+              <th style="color: #00324D;font-size: 15px;font-weight:bold;">名稱</th>
+              <th style="color: #00324D;font-size: 15px;font-weight:bold;">操作</th>
             </tr>
           </thead>
-          <tbody>
-            <tr v-for="(item, i) in items" :key="item.id">
+          <tbody >
+            <tr v-for="(item, i) in items" :key="item.id" style="background-color:#91A5AE;" >
               <td>
                 <span v-show="!item.edit">{{ item.name }}</span>
                 <v-text-field
@@ -38,12 +38,12 @@
               </td>
               <td>
                 <template v-if="!item.edit">
-                  <v-btn icon="mdi-pencil" @click="editItem(item.id)"></v-btn>
-                  <v-btn icon="mdi-delete" @click="delItem(item.id)"></v-btn>
+                  <v-btn icon="mdi-pencil" @click="editItem(item.id)" style="background-color:#00324D;"></v-btn>
+                  <v-btn icon="mdi-delete" @click="delItem(item.id)" style="background-color:#00324D;"></v-btn>
                 </template>
                 <template v-else>
-                  <v-btn icon="mdi-check" @click="onEditInputSubmit(item.id, i)"></v-btn>
-                  <v-btn icon="mdi-undo" @click="cancelEditItem(item.id)"></v-btn>
+                  <v-btn icon="mdi-check" @click="onEditInputSubmit(item.id, i)" style="background-color:#00324D;"></v-btn>
+                  <v-btn icon="mdi-undo" @click="cancelEditItem(item.id)" style="background-color:#00324D;"></v-btn>
                 </template>
               </td>
             </tr>
@@ -53,19 +53,19 @@
       <v-col cols="12">
         <h1 class="text-center">完成事項</h1>
       </v-col>
-      <v-col cols="12">
-        <v-table>
+      <v-col cols="12" >
+        <v-table >
           <thead>
-            <tr>
-              <th>名稱</th>
-              <th>操作</th>
+            <tr style="background-color: #DDCEC0;">
+              <th  style="color: #00324D;font-size: 15px;font-weight:bold;">名稱</th>
+              <th style="color: #00324D;font-size: 15px;font-weight:bold;">操作</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in finishedItems" :key="item.id">
+            <tr v-for="item in finishedItems" :key="item.id" style="background-color:#91A5AE;">
               <td>{{ item.name }}</td>
               <td>
-                <v-btn icon="mdi-delete" @click="delFinishItem(item.id)"></v-btn>
+                <v-btn icon="mdi-delete" @click="delFinishItem(item.id)" style="background-color:#00324D;"></v-btn>
               </td>
             </tr>
           </tbody>
