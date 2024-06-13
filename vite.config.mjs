@@ -15,6 +15,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     VitePWA({
       // 設定快取自動更新
@@ -36,9 +37,9 @@ export default defineConfig({
         name: '番茄鐘',
         short_name: '番茄鐘',
         // 工具列顏色
-        theme_color: '#f00',
+        theme_color: '#ffa7a7',
         // 啟動畫面背景色
-        background_color: '#121212',
+        background_color: '#ffa7a7',
         // 啟動網址
         start_url: './',
         // PWA 範圍，超出範圍會用瀏覽器顯示
